@@ -11,33 +11,28 @@ package beans;
  */
 public class AffectationProjet {
    
-    private int id;
-    private ProjetRecherche projetId;
-    private Enseignant enseignantId;
+    private ProjetRecherche projet;
+    private Enseignant enseignant;
 
-    // Getters et setters
-    public int getId() {
-        return id;
+    public AffectationProjet(ProjetRecherche projet, Enseignant enseignant) {
+        this.projet = projet;
+        this.enseignant = enseignant;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public ProjetRecherche getProjet() {
+        return projet;
+    }
+
+    public Enseignant getEnseignant() {
+        return enseignant;
+    }
+
+    public void setProjet(ProjetRecherche projet) {
+        this.projet = projet;
+    }
+
+    public void setEnseignant(Enseignant enseignant) {
+        this.enseignant = enseignant;
     }
     
-     public ProjetRecherche getProjetId() {
-        return projetId;
-    }
-
-    public Enseignant getEnseignantId() {
-        return enseignantId;
-    }
-
-    public void setProjetId(ProjetRecherche projetId) {
-        this.projetId = projetId;
-    }
-
-    public void setEnseignantId(Enseignant enseignantId) {
-        this.enseignantId = enseignantId;
-    }
-  
 }
