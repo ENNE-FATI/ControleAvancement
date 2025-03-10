@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/dao/IDao.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/connexion/Connexion.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/beans/ProjetRecherche.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/EnseignantService.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/AffectationProjetService.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/test/Test.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/ProjetRechercheService.java</file>
         </group>

@@ -35,7 +35,7 @@ public class ProjetRechercheService implements IDao<ProjetRecherche>{
     
     @Override
     public boolean create(ProjetRecherche o) {
-        String req = "insert into ProjetRecherche (id, titre, axe, dateDebut, dateFin) values (null, ?, ?, ?, ?)"; 
+        String req = "insert into ProjetRecherche (idP, titre, axe, dateDebut, dateFin) values (null, ?, ?, ?, ?)"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setString(1, o.getTitre());
@@ -52,7 +52,7 @@ public class ProjetRechercheService implements IDao<ProjetRecherche>{
 
     @Override
     public boolean delete(ProjetRecherche o) {
-        String req = "delete from ProjetRecherche where id = ?"; 
+        String req = "delete from ProjetRecherche where idP = ?"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setInt(1, o.getId());
@@ -66,14 +66,14 @@ public class ProjetRechercheService implements IDao<ProjetRecherche>{
 
     @Override
 public boolean update(ProjetRecherche o) {
-    String req = "UPDATE ProjetRecherche SET titre = ?, axe = ?, dateDebut = ?, dateFin = ? WHERE id = ?"; 
+    String req = "UPDATE ProjetRecherche SET titre = ?, axe = ?, dateDebut = ?, dateFin = ? WHERE idP = ?"; 
     try {
         PreparedStatement ps = connexion.getCn().prepareStatement(req);
         ps.setString(1, o.getTitre());
         ps.setString(2, o.getAxe());
         ps.setDate(3, new Date(o.getDateDebut().getTime()));
         ps.setDate(4, new Date(o.getDateFin().getTime()));
-        ps.setInt(5, o.getId());  // Changement ici (index 5 au lieu de 6)
+        ps.setInt(5, o.getId());  
         ps.executeUpdate();
         return true;
     } catch (SQLException ex) {
@@ -85,13 +85,13 @@ public boolean update(ProjetRecherche o) {
 
     @Override
     public ProjetRecherche findById(int id) {
-        String req = "select * from ProjetRecherche where id  = ?"; 
+        String req = "select * from ProjetRecherche where idP  = ?"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next())
-                return new ProjetRecherche(rs.getInt("id"), rs.getString("titre"), rs.getString("axe"), rs.getDate("dateDebut"), rs.getDate("dateFin"));
+                return new ProjetRecherche(rs.getInt("idP"), rs.getString("titre"), rs.getString("axe"), rs.getDate("dateDebut"), rs.getDate("dateFin"));
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -107,7 +107,7 @@ public boolean update(ProjetRecherche o) {
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
             projets.add(new ProjetRecherche(
-                rs.getInt("id"),
+                rs.getInt("idP"),
                 rs.getString("titre"),
                 rs.getString("axe"),
                 rs.getDate("dateDebut"),

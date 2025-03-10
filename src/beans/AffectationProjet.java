@@ -14,7 +14,7 @@ public class AffectationProjet {
     private ProjetRecherche projet;
     private Enseignant enseignant;
 
-    public AffectationProjet(ProjetRecherche projet, Enseignant enseignant) {
+    public AffectationProjet(Enseignant enseignant,ProjetRecherche projet ) {
         this.projet = projet;
         this.enseignant = enseignant;
     }
@@ -34,5 +34,5 @@ public class AffectationProjet {
     public void setEnseignant(Enseignant enseignant) {
         this.enseignant = enseignant;
     }
-    
+
 }

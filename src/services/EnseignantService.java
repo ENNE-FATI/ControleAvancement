@@ -34,7 +34,7 @@ public class EnseignantService implements IDao<Enseignant>{
     
     @Override
     public boolean create(Enseignant o) {
-        String req = "insert into Enseignant (id, nom, prenom, email) values (null, ?, ?, ?)"; 
+        String req = "insert into Enseignant (idE, nom, prenom, email) values (null, ?, ?, ?)"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setString(1, o.getNom());
@@ -50,7 +50,7 @@ public class EnseignantService implements IDao<Enseignant>{
 
     @Override
     public boolean delete(Enseignant o) {
-        String req = "delete from Enseignant where id = ?"; 
+        String req = "delete from Enseignant where idE = ?"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setInt(1, o.getId());
@@ -64,7 +64,7 @@ public class EnseignantService implements IDao<Enseignant>{
 
     @Override
     public boolean update(Enseignant o) {
-        String req = "update Enseignant set nom = ?, prenom = ?, email = ? where id  = ?"; 
+        String req = "update Enseignant set nom = ?, prenom = ?, email = ? where idE  = ?"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setString(1, o.getNom());
@@ -81,13 +81,13 @@ public class EnseignantService implements IDao<Enseignant>{
 
     @Override
     public Enseignant findById(int id) {
-        String req = "select * from Enseignant where id  = ?"; 
+        String req = "select * from Enseignant where idE  = ?"; 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next())
-                return new Enseignant(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"));
+                return new Enseignant(rs.getInt("idE"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"));
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -102,7 +102,7 @@ public class EnseignantService implements IDao<Enseignant>{
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             while (rs.next())
-                enseignants.add(new Enseignant(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email")));
+                enseignants.add(new Enseignant(rs.getInt("idE"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email")));
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
