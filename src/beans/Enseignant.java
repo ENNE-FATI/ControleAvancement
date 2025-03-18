@@ -10,6 +10,10 @@ package beans;
  * @author FATI
  */
 public class Enseignant {
+
+    public static void addItem(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private int id;
     private String nom;
     private String prenom;
@@ -58,6 +62,11 @@ public class Enseignant {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return nom + " " + prenom ;
     }
     
     

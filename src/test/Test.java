@@ -72,6 +72,6 @@ public class Test {
         for (AffectationProjet ap : aps.findAll()) {
             System.out.println("Affectation : " + ap.getEnseignant().getNom() + " qui prent le projet " + ap.getProjet().getTitre());
         }
-}
   
+  }
 }

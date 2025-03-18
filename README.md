@@ -3,9 +3,24 @@
 
             Gestion des Projets de Recherche
 
-Objectif:Ce projet est une application de gestion des projets de recherche. Il permet de gérer les projets, les enseignants et leurs affectations aux projets. L'application est développée en Java avec une base de données MySQL et Swing pour la partie des interfaces graphique.
+Contexte:
+Dans le cadre académique, la gestion des projets de recherche est une tâche complexe qui nécessite une organisation rigoureuse. Les enseignants et chercheurs sont souvent impliqués dans plusieurs projets simultanément, et il est essentiel de pouvoir suivre l'avancement de ces projets, les axes de recherche, et les responsabilités de chacun. Ce projet vise à simplifier cette gestion en offrant une plateforme centralisée pour créer, assigner et suivre les projets de recherche.
 
 -----------------------------------------------------------------
+
+Problématique:
+La gestion des projets de recherche est souvent dispersée et manque de centralisation. Il devient difficile de suivre l'évolution des projets, d'attribuer les enseignants à des projets spécifiques et d'obtenir des statistiques sur les axes de recherche actifs.
+
+-----------------------------------------------------------------
+Fonctionnalités:
+L'objectif de ce projet est de développer une application permettant de :
+               - Créer un projet de recherche.
+               - Assigner des enseignants à un projet.
+               - Filtrer les projets selon leur axe de recherche
+               - Rechercher un projet par titre
+               - Visualiser la répartition des projets par axe de recherche via un graphique.
+
+------------------------------------------------------------------
 Structure de la Base de Données   
 La base de données MySQL est composée des tables suivantes : 
 
@@ -26,20 +41,6 @@ Relations entre les Tables :
 - Un enseignant peut participer à plusieurs projets.  
 - La table AffectationProjet sert de table de liaison pour gérer la relation many-to-many entre ProjetRecherche et Enseignant.  
 
-Fonctionnalités :  
-
-1. Créer un projet de recherche :  
-   Permet d'ajouter un nouveau projet avec son titre, son axe de recherche, sa date de début et sa date de fin.  
-
-2. Assigner des enseignants :  
-   Permet d'assigner un ou plusieurs enseignants à un projet de recherche.  
-
-3. Filtrer les projets par axe de recherche :  
-   Permet de lister tous les projets appartenant à un axe de recherche spécifique.  
-
-4. Rechercher un projet par titre :  
-   Permet de rechercher un projet en fonction de son titre ou d'une partie de son titre. 
-------------------------------------------------------------------------------------------------------
 
 Schéma de la Base de Données:
 
@@ -66,4 +67,7 @@ CREATE TABLE AffecteProjet (
     FOREIGN KEY (id_enseignant) REFERENCES Enseignant(idE) ON DELETE CASCADE,
     FOREIGN KEY (id_projet) REFERENCES ProjetRecherche(idP) ON DELETE CASCADE
 );
+
+------------------------------------------------------------------------------------------------------
+
 

@@ -72,5 +72,10 @@ public class ProjetRecherche {
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
     }
+
+    @Override
+    public String toString() {
+        return titre ;
+    }
    
 }

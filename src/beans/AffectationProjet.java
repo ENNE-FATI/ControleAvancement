@@ -19,6 +19,7 @@ public class AffectationProjet {
         this.enseignant = enseignant;
     }
 
+
     public ProjetRecherche getProjet() {
         return projet;
     }
@@ -35,4 +36,9 @@ public class AffectationProjet {
         this.enseignant = enseignant;
     }
 
+    @Override
+    public String toString() {
+        return "AffectationProjet{" + "projet=" + projet + ", enseignant=" + enseignant + '}';
+    }
+ 
 }
