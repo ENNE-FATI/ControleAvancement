@@ -4,15 +4,18 @@
             Gestion des Projets de Recherche
 
 Contexte:
+
 Dans le cadre académique, la gestion des projets de recherche est une tâche complexe qui nécessite une organisation rigoureuse. Les enseignants et chercheurs sont souvent impliqués dans plusieurs projets simultanément, et il est essentiel de pouvoir suivre l'avancement de ces projets, les axes de recherche, et les responsabilités de chacun. Ce projet vise à simplifier cette gestion en offrant une plateforme centralisée pour créer, assigner et suivre les projets de recherche.
 
 -----------------------------------------------------------------
 
 Problématique:
+
 La gestion des projets de recherche est souvent dispersée et manque de centralisation. Il devient difficile de suivre l'évolution des projets, d'attribuer les enseignants à des projets spécifiques et d'obtenir des statistiques sur les axes de recherche actifs.
 
 -----------------------------------------------------------------
 Fonctionnalités:
+
 L'objectif de ce projet est de développer une application permettant de :
                - Créer un projet de recherche.
                - Assigner des enseignants à un projet.
@@ -21,7 +24,8 @@ L'objectif de ce projet est de développer une application permettant de :
                - Visualiser la répartition des projets par axe de recherche via un graphique.
 
 ------------------------------------------------------------------
-Structure de la Base de Données   
+    Structure de la Base de Données 
+      
 La base de données MySQL est composée des tables suivantes : 
 
 Les tables :  
