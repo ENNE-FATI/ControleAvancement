@@ -78,8 +78,7 @@ CREATE TABLE AffecteProjet (
 ![diagramme de classe](images/capture2.png)
 ##Le diagramme de Use cases:
 ![diagramme de Use cases](images/capture1.png)
----
+
 ##Technologies utilisées:
 
 Ce projet utilise **Java**, **MySQL** et **Java Swing** pour gérer les projets de recherche et l’affectation des enseignants. Java assure la logique métier, MySQL stocke les données (utilisateurs, enseignants, projets, affectations) via **JDBC**, et **Java Swing** fournit une interface interactive. L’architecture suit le modèle **MVC**, avec un système d’authentification et une gestion des dates via java.sql.Date, assurant une gestion efficace et intuitive des projets.
----
