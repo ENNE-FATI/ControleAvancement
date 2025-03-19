@@ -33,7 +33,7 @@ public class ProjetByAxeForm extends javax.swing.JInternalFrame {
 }
 private void loadAxeOptions() {
     listAxe.removeAllItems();
-    listAxe.addItem("Choisir un axe");
+    
 
     List<String> axes = new ArrayList<>();
     for (ProjetRecherche projet : prs.findAll()) {
@@ -67,11 +67,15 @@ private void loadAxeOptions() {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         listAxe = new javax.swing.JComboBox();
-        bnRechercher = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listProjetByAxe = new javax.swing.JTable();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Filtrage des projets par axe de recherche:"));
 
         jLabel1.setText("Axe:");
@@ -79,13 +83,6 @@ private void loadAxeOptions() {
         listAxe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listAxeActionPerformed(evt);
-            }
-        });
-
-        bnRechercher.setText("Rechercher");
-        bnRechercher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnRechercherActionPerformed(evt);
             }
         });
 
@@ -99,10 +96,6 @@ private void loadAxeOptions() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(listAxe, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(189, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bnRechercher)
-                .addGap(238, 238, 238))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,9 +104,7 @@ private void loadAxeOptions() {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(listAxe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(bnRechercher)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         listProjetByAxe.setModel(new javax.swing.table.DefaultTableModel(
@@ -146,12 +137,7 @@ private void loadAxeOptions() {
 
     private void listAxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAxeActionPerformed
        // TODO add your handling code here:
-    }//GEN-LAST:event_listAxeActionPerformed
-
-    private void bnRechercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnRechercherActionPerformed
-       // TODO add your handling code here:
-                                   
-    String selectedAxe = (String) listAxe.getSelectedItem();
+        String selectedAxe = (String) listAxe.getSelectedItem();
 
     if (selectedAxe != null && !selectedAxe.equals("Choisir un axe")) {
         model.setRowCount(0); // Vider la table avant d'ajouter les nouveaux résultats
@@ -168,13 +154,10 @@ private void loadAxeOptions() {
     } else {
         JOptionPane.showMessageDialog(this, "Veuillez choisir un axe !");
     }
-
-
-    }//GEN-LAST:event_bnRechercherActionPerformed
+    }//GEN-LAST:event_listAxeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bnRechercher;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

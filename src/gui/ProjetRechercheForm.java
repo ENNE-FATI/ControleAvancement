@@ -72,7 +72,7 @@ public class ProjetRechercheForm extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Gestion des projets de recherche"));
         jPanel1.setEnabled(false);
 
@@ -90,6 +90,7 @@ public class ProjetRechercheForm extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Date Fin:");
 
+        bnAdd.setBackground(new java.awt.Color(0, 0, 255));
         bnAdd.setText("Ajouter");
         bnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +98,7 @@ public class ProjetRechercheForm extends javax.swing.JInternalFrame {
             }
         });
 
+        bnDelete.setBackground(new java.awt.Color(204, 0, 0));
         bnDelete.setText("Supprimer");
         bnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +106,7 @@ public class ProjetRechercheForm extends javax.swing.JInternalFrame {
             }
         });
 
+        bnModifier.setBackground(new java.awt.Color(255, 204, 0));
         bnModifier.setText("Modifier");
         bnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

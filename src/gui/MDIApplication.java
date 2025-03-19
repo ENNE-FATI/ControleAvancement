@@ -244,5 +244,5 @@ public class MDIApplication extends javax.swing.JFrame {
     private javax.swing.JMenuItem projetRechercheMenuItem;
     // End of variables declaration//GEN-END:variables
    
-   
+    
 }

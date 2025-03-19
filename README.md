@@ -1,52 +1,56 @@
-"# ControleAvancement" 
-    
+ControleAvancement - Gestion des Projets de Recherche
 
-            Gestion des Projets de Recherche
+📌 Contexte
 
-Contexte:
+Dans le cadre académique, la gestion des projets de recherche est une tâche complexe qui nécessite une organisation rigoureuse. Les enseignants et chercheurs sont souvent impliqués dans plusieurs projets simultanément, ce qui rend essentiel le suivi de l'avancement des projets, des axes de recherche et des responsabilités de chacun.
 
-Dans le cadre académique, la gestion des projets de recherche est une tâche complexe qui nécessite une organisation rigoureuse. Les enseignants et chercheurs sont souvent impliqués dans plusieurs projets simultanément, et il est essentiel de pouvoir suivre l'avancement de ces projets, les axes de recherche, et les responsabilités de chacun. Ce projet vise à simplifier cette gestion en offrant une plateforme centralisée pour créer, assigner et suivre les projets de recherche.
+Ce projet vise à simplifier cette gestion en offrant une plateforme centralisée permettant de créer, assigner et suivre les projets de recherche efficacement.
 
------------------------------------------------------------------
+🚀 Problématique
 
-Problématique:
+La gestion des projets de recherche est souvent dispersée et manque de centralisation. Il devient difficile de :
 
-La gestion des projets de recherche est souvent dispersée et manque de centralisation. Il devient difficile de suivre l'évolution des projets, d'attribuer les enseignants à des projets spécifiques et d'obtenir des statistiques sur les axes de recherche actifs.
+Suivre l'évolution des projets
 
------------------------------------------------------------------
-Fonctionnalités:
+Attribuer les enseignants à des projets spécifiques
 
-L'objectif de ce projet est de développer une application permettant de :
-               - Créer un projet de recherche.
-               - Assigner des enseignants à un projet.
-               - Filtrer les projets selon leur axe de recherche
-               - Rechercher un projet par titre
-               - Visualiser la répartition des projets par axe de recherche via un graphique.
+Obtenir des statistiques sur les axes de recherche actifs
 
-------------------------------------------------------------------
-    Structure de la Base de Données 
-      
-La base de données MySQL est composée des tables suivantes : 
+🎯 Fonctionnalités
 
-Les tables :  
+Cette application permet de :
 
-1. ProjetRecherche :  
-   Contient les informations sur les projets de recherche.  
+📌 Créer un projet de recherche
 
-2. Enseignant :  
-   Contient les informations sur les enseignants.  
+👩‍🏫 Assigner des enseignants à un projet
 
-3. AffectationProjet :  
-   Contient les informations sur les affectations des enseignants aux projets. 
-   
-Relations entre les Tables :  
+🔎 Filtrer les projets selon leur axe de recherche
 
-- Un projet (ProjetRecherche) peut avoir plusieurs enseignants assignés via la table AffectationProjet.  
-- Un enseignant peut participer à plusieurs projets.  
-- La table AffectationProjet sert de table de liaison pour gérer la relation many-to-many entre ProjetRecherche et Enseignant.  
+🔍 Rechercher un projet par titre
 
+📊 Visualiser la répartition des projets par axe de recherche via un graphique
 
-Schéma de la Base de Données:
+🗄️ Structure de la Base de Données
+
+La base de données MySQL est composée des tables suivantes :
+
+Les Tables :
+
+ProjetRecherche : Contient les informations sur les projets de recherche.
+
+Enseignant : Contient les informations sur les enseignants.
+
+AffectationProjet : Contient les affectations des enseignants aux projets.
+
+Relations entre les Tables :
+
+Un projet (ProjetRecherche) peut avoir plusieurs enseignants assignés via la table AffectationProjet.
+
+Un enseignant peut participer à plusieurs projets.
+
+La table AffectationProjet sert de table de liaison pour gérer la relation many-to-many entre ProjetRecherche et Enseignant.
+
+Schéma de la Base de Données
 
 CREATE TABLE ProjetRecherche (
     idP INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,7 +67,6 @@ CREATE TABLE Enseignant (
     email VARCHAR(255) NOT NULL UNIQUE
 );
 
-
 CREATE TABLE AffecteProjet (
     id_enseignant INT NOT NULL,
     id_projet INT NOT NULL,
@@ -72,6 +75,39 @@ CREATE TABLE AffecteProjet (
     FOREIGN KEY (id_projet) REFERENCES ProjetRecherche(idP) ON DELETE CASCADE
 );
 
-------------------------------------------------------------------------------------------------------
+📌 Diagrammes
 
+Diagramme de Classe
+
+![Texte alternatif](images/capture2.png)
+
+Diagramme de Cas d'Utilisation
+![Texte alternatif](images/capture1.png)
+
+
+🛠️ Technologies Utilisées
+
+Langage : Java
+
+Base de données : MySQL
+
+Interface Graphique : Java Swing
+
+Architecture : MVC
+
+Connexion à la BD : JDBC
+
+Gestion des dates : java.sql.Date
+
+Ce projet assure une gestion efficace et intuitive des projets de recherche avec un système d’authentification et un suivi optimisé des affectations.
+
+📌 Auteur
+
+👨‍💻 [Votre Nom]
+
+📧 [Votre Email]
+
+🌐 [Votre Portfolio ou LinkedIn]
+
+🔗 N'hésitez pas à contribuer et à proposer des améliorations ! 🚀
 

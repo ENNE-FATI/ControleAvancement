@@ -3,13 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/ProjetByTitreForm.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/AffectationProjetForm.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/Main.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/UserService.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/ProjetRechercheService.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/test/Test.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/ProjetRechercheForm.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/MDIApplication.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/ProjetByAxe.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/AffectationProjetForm.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/beans/ProjetRecherche.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/ProjetByAxeForm.java</file>
             <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/AffectationProjetService.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/gui/Main.java</file>
-            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/services/ProjetRechercheService.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/beans/AffectationProjet.java</file>
+            <file>file:/C:/Users/go/Documents/NetBeansProjects/ProjetsDeRecherche/src/beans/Enseignant.java</file>
         </group>
     </open-files>
 </project-private>

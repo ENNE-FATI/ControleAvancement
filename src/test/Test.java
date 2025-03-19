@@ -8,11 +8,13 @@ package test;
 import beans.AffectationProjet;
 import beans.Enseignant;
 import beans.ProjetRecherche;
+import beans.User;
 import java.sql.Date;
 import java.util.List;
 import services.AffectationProjetService;
 import services.EnseignantService;
 import services.ProjetRechercheService;
+import services.UserService;
 
 /**
  *
@@ -23,6 +25,8 @@ public class Test {
         ProjetRechercheService ps = new ProjetRechercheService();
         EnseignantService es = new EnseignantService();
         AffectationProjetService aps = new AffectationProjetService();
+       
+        
         
 //       ps.create(new ProjetRecherche("Projet A", "Informatique", Date.valueOf("2025-01-01"), Date.valueOf("2025-07-31")));
 //       ps.create(new ProjetRecherche("Projet B", "Biologie", Date.valueOf("2025-02-01"), Date.valueOf("2025-08-31")));
@@ -69,9 +73,12 @@ public class Test {
 //      System.out.println("Affectation supprimée : " + affectationsupprimé.getEnseignant().getNom() + "/" + affectationsupprimé.getProjet().getTitre()+ " d'axe:"+affectationsupprimé.getProjet().getAxe());
 
     
-        for (AffectationProjet ap : aps.findAll()) {
-            System.out.println("Affectation : " + ap.getEnseignant().getNom() + " qui prent le projet " + ap.getProjet().getTitre());
-        }
-  
-  }
+        //  for (AffectationProjet ap : aps.findAll()) {
+         //   System.out.println("Affectation : " + ap.getEnseignant().getNom() + " qui prent le projet " + ap.getProjet().getTitre());
+       // }
+   }
+      
+        
+        
+   
 }

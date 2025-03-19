@@ -54,12 +54,19 @@ public class ProjetByTitreForm extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listProjetsByTitle = new javax.swing.JTable();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Rechercher un projet par titre"));
 
         jLabel1.setText("Titre:");
 
-        txtChercher.setText("Chercher");
+        txtChercher.setBackground(new java.awt.Color(0, 0, 255));
+        txtChercher.setIcon(new javax.swing.ImageIcon("C:\\Users\\go\\Documents\\NetBeansProjects\\ProjetsDeRecherche\\src\\Images\\icons8-chercher-24.png")); // NOI18N
+        txtChercher.setText("Rechercher");
         txtChercher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtChercherActionPerformed(evt);
@@ -77,7 +84,7 @@ public class ProjetByTitreForm extends javax.swing.JInternalFrame {
                 .addComponent(txtTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(txtChercher)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -81,11 +81,19 @@ public class AffectationProjetForm extends javax.swing.JInternalFrame {
         listProjets = new javax.swing.JComboBox();
         listEnseignants = new javax.swing.JComboBox();
         bnAdd = new javax.swing.JButton();
+        bnUpdate = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListProjetByEnseignant = new javax.swing.JTable();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\go\\Documents\\NetBeansProjects\\ProjetsDeRecherche\\src\\Images\\icons8-prof-48.png")); // NOI18N
         jLabel1.setText("Enseignant:");
 
         jLabel2.setText("Projet:");
@@ -102,6 +110,7 @@ public class AffectationProjetForm extends javax.swing.JInternalFrame {
             }
         });
 
+        bnAdd.setBackground(new java.awt.Color(0, 51, 255));
         bnAdd.setText("Ajouter");
         bnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,37 +118,60 @@ public class AffectationProjetForm extends javax.swing.JInternalFrame {
             }
         });
 
+        bnUpdate.setBackground(new java.awt.Color(255, 0, 0));
+        bnUpdate.setText("Supprimer");
+        bnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnUpdateActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("L'affectation de projetaux enseignants:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listProjets, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listEnseignants, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(bnAdd)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(listProjets, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(listEnseignants, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(bnAdd)
+                        .addGap(101, 101, 101)
+                        .addComponent(bnUpdate)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(145, 145, 145))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(listProjets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listEnseignants, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(bnAdd)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bnAdd)
+                    .addComponent(bnUpdate))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ListProjetByEnseignant.setModel(new javax.swing.table.DefaultTableModel(
@@ -205,12 +237,50 @@ public class AffectationProjetForm extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_listEnseignantsActionPerformed
 
+    private void bnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnUpdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = ListProjetByEnseignant.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une affectation à supprimer.");
+            return;
+        }
+
+        String enseignantNom = (String) ListProjetByEnseignant.getValueAt(selectedRow, 0);
+        String projetTitre = (String) ListProjetByEnseignant.getValueAt(selectedRow, 1);
+
+        // Parcourir la liste des affectations pour trouver celle à supprimer
+        AffectationProjet affectationToDelete = null;
+        for (AffectationProjet ap : aps.findAll()) {
+            String nomCompletEnseignant = ap.getEnseignant().getNom() + " " + ap.getEnseignant().getPrenom();
+            if (nomCompletEnseignant.equals(enseignantNom) && ap.getProjet().getTitre().equals(projetTitre)) {
+                affectationToDelete = ap;
+                break;
+            }
+        }
+
+        if (affectationToDelete == null) {
+            JOptionPane.showMessageDialog(this, "Affectation introuvable !");
+            return;
+        }
+
+        // Supprimer l'affectation
+        if (aps.delete(affectationToDelete)) {
+            JOptionPane.showMessageDialog(this, "Affectation supprimée avec succès !");
+            model.removeRow(selectedRow); // Mettre à jour la table
+        } else {
+            JOptionPane.showMessageDialog(this, "Erreur lors de la suppression de l'affectation.");
+        }
+    }//GEN-LAST:event_bnUpdateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ListProjetByEnseignant;
     private javax.swing.JButton bnAdd;
+    private javax.swing.JButton bnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox listEnseignants;
