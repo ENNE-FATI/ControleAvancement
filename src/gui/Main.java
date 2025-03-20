@@ -28,6 +28,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Authentification");
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -48,7 +49,7 @@ public class Main extends javax.swing.JFrame {
         txtLogin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        bnForgetPassword = new javax.swing.JButton();
         btnConnexion = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -77,9 +78,14 @@ public class Main extends javax.swing.JFrame {
 
         jLabel2.setText("Mot de passe");
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Mot de pass oublie ");
+        bnForgetPassword.setBackground(new java.awt.Color(255, 204, 0));
+        bnForgetPassword.setForeground(new java.awt.Color(255, 255, 255));
+        bnForgetPassword.setText("Mot de pass oublie ");
+        bnForgetPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnForgetPasswordActionPerformed(evt);
+            }
+        });
 
         btnConnexion.setBackground(new java.awt.Color(51, 51, 255));
         btnConnexion.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,7 +120,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                             .addGap(26, 26, 26)
-                            .addComponent(jButton1)
+                            .addComponent(bnForgetPassword)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConnexion))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
@@ -137,7 +143,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(bnForgetPassword)
                     .addComponent(btnConnexion))
                 .addContainerGap(263, Short.MAX_VALUE))
         );
@@ -222,6 +228,38 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLoginActionPerformed
 
+    private void bnForgetPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnForgetPasswordActionPerformed
+        // TODO add your handling code here:
+        String login = txtLogin.getText().trim();
+
+        if (login.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Veuillez entrer votre login pour réinitialiser le mot de passe.");
+            txtLogin.requestFocus();
+            return;
+        }
+
+        UserService userService = new UserService();
+        String temporaryPassword = userService.resetPassword(login);
+
+        if (temporaryPassword != null) {
+                JTextField passwordField = new JTextField(temporaryPassword);
+            passwordField.setEditable(true);  // Permet de copier le texte
+            passwordField.setSelectionStart(0);  // Sélectionne le texte automatiquement
+            passwordField.setSelectionEnd(temporaryPassword.length());
+
+            Object[] message = {
+                "Votre mot de passe temporaire est :", passwordField,
+                "Veuillez le copier puis le coller dans le champ de mot de passe pour vous connecter."
+            };
+
+            JOptionPane.showMessageDialog(this, message, "Mot de passe temporaire", JOptionPane.INFORMATION_MESSAGE);
+            txtPassword.requestFocus(); // Place le curseur dans le champ de mot de passe pour coller facilement
+        } else {
+            JOptionPane.showMessageDialog(this, "Utilisateur non trouvé.");
+            txtLogin.requestFocus();
+        }
+    }//GEN-LAST:event_bnForgetPasswordActionPerformed
+
    
 
     /**
@@ -260,8 +298,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bnForgetPassword;
     private javax.swing.JButton btnConnexion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

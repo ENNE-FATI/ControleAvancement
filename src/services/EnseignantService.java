@@ -26,6 +26,7 @@ public class EnseignantService implements IDao<Enseignant>{
     private Connexion connexion;
     private EnseignantService es;
     
+    
 
     public EnseignantService() {
         connexion = Connexion.getInstance();
