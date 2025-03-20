@@ -136,10 +136,11 @@ CREATE TABLE AffecteProjet (
 
 );
 
----
+```
 
 ## Le diagramme de classe :
-![diagramme de classe](src/Images/Classe.PNG)
+![image](https://github.com/user-attachments/assets/9fee8e6e-e7f9-4022-973b-1290a13f2a34)
+
 
 ## Le diagramme de Use cases :
 ![diagramme de Use cases](src/Images/UseCase.PNG)
@@ -156,8 +157,9 @@ Ce projet utilise **Java**, **MySQL** et **Java Swing** pour gérer les projets 
 
 L’architecture suit le modèle **MVC**, avec un système d’authentification et une gestion des dates via `java.sql.Date`, assurant une gestion efficace et intuitive des projets.
 
----
+```
 
 ## 🎥 Vidéo de Démonstration  
 Vous pouvez visionner la vidéo de démonstration ici :  
 [Voir la vidéo](https://drive.google.com/drive/folders/1i8JGzfFHk7Bo_ta4EXG4vfkLXm4fDsUL?usp=drive_link)
+
