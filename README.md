@@ -157,11 +157,7 @@ Ce projet utilise **Java**, **MySQL** et **Java Swing** pour gérer les projets 
 
 L’architecture suit le modèle **MVC**, avec un système d’authentification et une gestion des dates via `java.sql.Date`, assurant une gestion efficace et intuitive des projets.
 
-```
-## L'architecture de projet  
-![L'architecture de projet ](src/Images/Arcitecture.png)
 
-```
 
 ## 🎥 Vidéo de Démonstration  
 Vous pouvez visionner la vidéo de démonstration ici :  
